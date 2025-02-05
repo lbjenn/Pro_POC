@@ -28,7 +28,9 @@ Changelog formats can be mixed and matched as desired. Liquibase does not impose
 
 ## Sample Changelogs
 
-* [Root - Mongo](changelog.mongo.xml)
+* [Root - Mongo - JS](changelog.mongo.json)
+    * [JS - Mongo](changesets/changelog.mongo.js)
+* [Root - Mongo - XML](changelog.mongo.xml)
     * [JS - Mongo](changesets/changelog.mongo.js)
 * [Root - SQL](changelog.relational.sql)
     * [SQL - Relational](changesets/changelog.ddl.sql)
@@ -37,6 +39,7 @@ Changelog formats can be mixed and matched as desired. Liquibase does not impose
 
 ```
 /
+|   changelog.mongo.json
 │   changelog.mongo.xml
 │   changelog.relational.sql
 │   changelog.relational.xml
@@ -58,7 +61,7 @@ In general, Liquibase needs three pieces of information to connect to a database
 1. Username: typically a service account
 1. Password: typically stored within a vault
 
-The exact information required may vary between individual database platforms. Consult [the database documentation](https://www.liquibase.com/supported-databases) for specific details.
+The exact information required may vary between individual database platforms. Consult [the database documentation](https://docs.liquibase.com/start/tutorials/home.html) for specific details.
 
 ## Helpful Liquibase Commands
 |Command |Description|Documentation
@@ -87,7 +90,7 @@ Liquibase Pro can work with any automation tool which supports invoking command-
 ## Core Pro Features
 During a typical evaluation the following features are exercised.
 
-1. [Policy Checks](https://docs.liquibase.com/liquibase-pro/policy-checks/home.html): similar to static code analysis, but geared more for database changes. can be customized by team, database, etc.
+1. [Policy Checks](https://docs.liquibase.com/liquibase-pro/policy-checks/home.html): similar to static code analysis, but geared more for database changes. can be customized by team, database, etc. Sample Regex and Python checks can be found [here](https://github.com/liquibase/custom_policychecks).
 1. [Workflows](https://docs.liquibase.com/commands/flow/flow.html): portable, database independent workflows to ensure consistency
 1. [Targeted Rollback](https://docs.liquibase.com/liquibase-pro/targeted-rollbacks.html): rollback individual changesets
 1. [Operation Reports](https://docs.liquibase.com/liquibase-pro/observability/operation-reports.html): basic HTML reports used for auditing or troubleshooting
